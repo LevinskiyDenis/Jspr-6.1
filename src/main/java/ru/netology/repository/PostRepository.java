@@ -25,14 +25,9 @@ public class PostRepository {
         return post;
     }
 
-    public boolean removeById(long id) {
-        boolean isRemoved = false;
+    public Optional<Post> removeById(long id) {
+        return Optional.ofNullable(hashMap.remove(id));
 
-        if (hashMap.remove(id) != null) {
-            isRemoved = true;
-        }
-
-        return isRemoved;
     }
 
 }

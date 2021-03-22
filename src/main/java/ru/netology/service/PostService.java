@@ -35,8 +35,8 @@ public class PostService {
         }
     }
 
-    public boolean removeById(long id) {
-        return repository.removeById(id);
+    public Post removeById(long id) {
+        return repository.removeById(id).orElseThrow(NotFoundException::new);
     }
 }
 
